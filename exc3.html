@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>chessBoard</title>
+</head>
+<body>
+    <script>
+        //chessboard
+        let size = prompt("enter the number of pattern ");
+
+        let chessBoard = '';
+        for(let a = 0;a<size;a++)
+        {
+            for(let b = 0;b<size;b++)
+            {
+                if((a+b)%2==0)
+                {
+                    chessBoard += "#";
+                }
+                else{
+                    chessBoard += " ";
+                }
+            }
+            chessBoard += '\n';
+        }
+        console.log(chessBoard);
+        
+    </script>
+</body>
+</html>
