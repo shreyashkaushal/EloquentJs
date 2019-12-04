@@ -34,7 +34,13 @@
             return array2;
 
         }
-        console.log(listToArray(list1));
+        //console.log(listToArray(list1));
+        function prepend(value,list)
+        {
+            return {value:value,rest:list1} //it can be return as {value,rest:list1} //destructuring ecm6 feature
+        }
+      let list2 = prepend(60,list1);
+        console.log(list2);
     </script>
 </body>
 </html>

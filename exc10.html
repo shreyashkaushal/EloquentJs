@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>deep comparision </title>
+</head>
+<body>
+    <script>
+        function deepEqual(value1,value2)
+        {
+            if(value1===value2)
+            {
+                return true;
+            }
+            if(value1 ==null ||typeof(value1) !='object'|| value2==null || typeof(value2)!='object')
+            {
+                return false;
+            }
+            let keyvalue1 =Object.keys(value1) , keyvalue2 = Object.keys(value2);
+            if(keyvalue1.length != keyvalue2.length)
+            {
+                return false;
+            }
+            for (let key of keyvalue1) {
+           if (!keyvalue2.includes(key) || !deepEqual(value1[key], value2[key])) 
+           {
+               return false;
+           }
+        }
+           return true;
+        }
+        let obj = {amount:1};
+        console.log(obj);
+        let obj1 = {amount:1};
+        console.log(deepEqual(obj,obj1));
+    </script>
+</body>
+</html>
