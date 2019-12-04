@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>list</title>
+</head>
+<body>
+    <script>
+
+        let array1 = [10,20,30,40];
+        function arrayToList(array1)
+        {
+            let list = null;
+            for(let i=array1.length-1;i>=0;i--)
+            {
+               list = {
+                   value:array1[i] , rest : list
+               } 
+                           
+            }
+            return list
+        }
+        let list1 = arrayToList(array1);
+        //console.log(list1);
+        function listToArray(list1)
+        {
+            let array2= [];
+            for(temp=list1;temp;temp=temp.rest)
+            {
+                array2.push(temp.value);
+            }
+            return array2;
+
+        }
+        console.log(listToArray(list1));
+    </script>
+</body>
+</html>
